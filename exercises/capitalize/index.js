@@ -7,10 +7,13 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
+
+//split string by spaces into an array of words
+//iterate over each word and take the first index of each item and capitalize
+//turn the sentence back into a string
+
 function capitalize(str) {
-  //split string by spaces into an array of words
-  //iterate over each word and take the first index of each item and capitalize
-  //turn the sentence back into a string
+
   const sentenceArray = str.split(" ")
   let capSentence = []
 
