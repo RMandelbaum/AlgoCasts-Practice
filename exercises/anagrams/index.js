@@ -8,39 +8,31 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-// function anagrams(stringA, stringB) {
-//   const hashOne = charMapStrings(stringA);
-//   const hashTwo = charMapStrings(stringB);
-//
-//   if (Object.keys(hashOne).length !== Object.keys(hashTwo).length){
-//     return false;
-//     }
-//
-//   for (let char in hashOne){
-//     if (hashOne[char] !== hashTwo[char]){
-//       return false;
-//     }
-//   }
-//
-//   return true;
-//
-//   }
-//
-// function charMapStrings(str){
-//   const hashString = {};
-//
-//   for(let char of str.replace(/[^\w]/g, "").toLowerCase()){
-//     hashString[char] = hashString[char] + 1 || 1;
-//   }
-//   return hashString;
-// }
+function anagrams(stringA, stringB) {
+  const hashOne = charMapStrings(stringA);
+  const hashTwo = charMapStrings(stringB);
 
-function anagrams(stringA, stringB){
-  return cleanString(stringA) === cleanString(stringB)
+  if (Object.keys(hashOne).length !== Object.keys(hashTwo).length){
+    return false;
+    }
+
+  for (let char in hashOne){
+    if (hashOne[char] !== hashTwo[char]){
+      return false;
+    }
   }
 
-  function cleanString(str){
-    return str.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('')
+  return true;
+
   }
 
+function charMapStrings(str){
+  const hashString = {};
+
+  for(let char of str.replace(/[^\w]/g, "").toLowerCase()){
+    hashString[char] = hashString[char] + 1 || 1;
+  }
+  return hashString;
+}
+s
 module.exports = anagrams;
