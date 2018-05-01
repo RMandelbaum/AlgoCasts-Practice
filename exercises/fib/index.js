@@ -7,8 +7,21 @@
 // forms the first ten entries of the fibonacci series.
 // Example:
 //   fib(4) === 3
+function memoize(fn){
+  const cache = {}
+  return function(...args){
+    if (cache[args]){
+      return cache[args]
+    }
 
-function fib(n) {
+    const result = fn.apply(this, args);
+    cache[args] = result;
+
+    return result;
+  }
+}
+
+function slowFib(n) {
 
   if( n < 2){
     return n;
@@ -25,5 +38,6 @@ function fib(n) {
   // return sequence[n]
 }
 
+const fib = memoize(slowFib)
 
 module.exports = fib;
