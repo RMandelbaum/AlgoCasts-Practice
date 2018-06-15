@@ -24,7 +24,7 @@ function fizzBuzz(n) {
       console.log(i)
     }
    }
- }
+ 
 
 
 
